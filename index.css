@@ -7,8 +7,14 @@ body {
     padding-top: 10rem;
 }
 
+img{
+    width: 80px;
+}
+
 .container{
-    width: 400px;
+    width: 50%;
+    height: 50vh;
+    /* height: 600px; */
     border: black 5px solid;
     background-color: green;
     margin: auto;

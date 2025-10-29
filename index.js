@@ -12,12 +12,14 @@ let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEL = document.getElementById("player-el")
+let cardReal = document.getElementById("real-cards")
 
 
 playerEL.textContent = player.name + ' : ' + player.chips
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
+    
     if (randomNumber > 10) {
         return 10
     } else if (randomNumber === 1) {
@@ -27,10 +29,19 @@ function getRandomCard() {
     }
 }
 
+function getRandomSuite(){
+    let randomSuite = Math.floor(Math.random()* 4) +1
+    return randomSuite
+}
+
 function startGame() {
     isAlive = true
+    
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
+
+    cardReal.innerHTML = "<img src='/playing-cards/" + getRandomSuite() + "-" + firstCard+".jpg'> <img src='/playing-cards/" + getRandomSuite() + "-" + secondCard +".jpg'>"
+    console.log(cardReal.innerhtml)
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
     renderGame()
