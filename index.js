@@ -19,20 +19,23 @@ playerEL.textContent = player.name + ' : ' + player.chips
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
+    return randomNumber
     
-    if (randomNumber > 10) {
-        return 10
-    } else if (randomNumber === 1) {
-        return 11
-    } else {
-        return randomNumber
-    }
+    // if (randomNumber > 10) {
+    //     return 10
+    // } else if (randomNumber === 1) {
+    //     return 11
+    // } else {
+    //     return randomNumber
+    // }
 }
 
 function getRandomSuite(){
     let randomSuite = Math.floor(Math.random()* 4) +1
     return randomSuite
 }
+
+
 
 function startGame() {
     isAlive = true
@@ -70,8 +73,10 @@ function renderGame() {
 function newCard() {
     if (isAlive === true && hasBlackJack === false) {
         let card = getRandomCard()
+        cardReal.innerHTML += " <img src='/playing-cards/" + getRandomSuite() + "-" + card+".jpg'>"
         sum += card
         cards.push(card)
+
         renderGame()        
     }
 }
