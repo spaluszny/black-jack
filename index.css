@@ -4,7 +4,7 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
-    padding-top: 10rem;
+    padding-top: 1rem;
 }
 
 img{
@@ -12,8 +12,8 @@ img{
 }
 
 .container{
-    width: 50%;
-    height: 50vh;
+    width: 500px;
+    height: 700px;
     /* height: 600px; */
     border: black 5px solid;
     background-color: green;
